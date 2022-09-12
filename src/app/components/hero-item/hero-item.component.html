@@ -1,0 +1,24 @@
+<!-- <div class="hero-card">
+  <img src={{hero.imageUrl}} alt="">
+  <p>{{ hero.superheroName }}</p>
+  <ul>
+    <li *ngFor="let power of superpowers">{{ power.name }}</li>
+  </ul>
+</div> -->
+<div class="card" style="width: 18rem;">
+  <img src="{{hero.imageUrl}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-title">Superhero name:  <span class="hero-name">{{hero.superheroName | uppercase}}</span></p>
+    <p class="card-text">Real name:  <span class="hero-name">{{hero.realName}}</span></p>
+  </div>
+  <div class="container d-flex">
+  <ul class="list-group">
+    <li class="list-group-item" 
+      *ngFor="let power of superpowers">{{ power.name }} {{power.icon}}
+      <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
+      <span class="material-symbols-outlined" (click)="removePower(power.id)">delete</span>
+    </li>
+  </ul>
+  </div>
+  <app-plus-superpower [hero]="hero" (updatedHero)="receiveData($event)"></app-plus-superpower>
+</div>

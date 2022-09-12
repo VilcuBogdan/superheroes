@@ -1,0 +1,9 @@
+<button (click)="onClick()">+</button>
+    <div *ngIf="openModal">
+        <select multiple [(ngModel)]="selectedValues">
+            <option *ngFor="let power of missingPowers" [ngValue]="power.id">{{power.name}}{{power.icon}}</option>
+        </select>
+        <button class="btn btn-success" (click)="addPowers()">Add a new power</button>
+    </div>
+
+

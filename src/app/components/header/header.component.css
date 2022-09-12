@@ -1,0 +1,15 @@
+.container-fluid {
+  display: flex;
+  width: 100%;
+};
+.superheroes {
+  background-color: red;
+} 
+
+.superpowers {
+  margin-left: 20px;
+  background-color: #E2B5FD;
+  
+  
+} 
+

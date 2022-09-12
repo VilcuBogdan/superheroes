@@ -1,0 +1,8 @@
+<div class="container row row-cols-sm-2 row-cols-md-4">
+  <app-hero-item
+    *ngFor="let hero of heroes"
+    [hero]="hero"
+    [allSuperpowers]="allSuperpowers"
+    (removePowerList)="removePower(superpower)">
+  </app-hero-item>
+</div>

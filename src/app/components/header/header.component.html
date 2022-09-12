@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+    <div>
+      <button type="button" class="btn superpowers" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Superheroes</button>      
+      <button type="button" class="btn superpowers" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add Superpowers</button>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Superhero</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formHero">
+          <label for="realName"  class="form-label"><h6>Real name:</h6></label>
+          <input type="text" formControlName="realName" class="form-control" placeholder="Please write real name" aria-label="Username" aria-describedby="basic-addon1">
+          <label for="superheroName"  class="form-label mt-3"><h6>Superhero name:</h6></label>
+          <input type="text" formControlName="superheroName" class="form-control" placeholder="Please write superhero name" aria-label="Username" aria-describedby="basic-addon1">
+          <label for="imageUrl" class="form-label"  class="form-label mt-3"><h6>Supehero image:</h6></label>
+              <div class="input-group m-2">
+                  <span class="input-group-text" id="basic-addon3">Input URL:</span>
+                  <input type="text" formControlName="imageUrl" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addHero()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Superpower</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formPower">
+          <label for="name"  class="form-label"><h6>Superpower name:</h6></label>
+          <input type="text" class="form-control" formControlName="name" placeholder="Please write real name" aria-label="Username" aria-describedby="basic-addon1">
+          <label for="icon"  class="form-label mt-3"><h6>Superpower icon:</h6></label>
+          <input type="text" class="form-control" formControlName="icon" placeholder="Please write superhero name" aria-label="Username" aria-describedby="basic-addon1">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addSuperpower()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
